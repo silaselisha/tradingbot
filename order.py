@@ -1,4 +1,4 @@
-from ibapi.order import Order
+from ibapi.order import Order # type: ignore
 
 BUY = "BUY"
 SELL = "SELL"

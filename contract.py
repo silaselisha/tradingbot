@@ -1,4 +1,4 @@
-from ibapi.contract import Contract
+from ibapi.contract import Contract # type: ignore
 
 def stock(symbol, exchange, currency):
     contract = Contract()

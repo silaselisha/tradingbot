@@ -21,7 +21,14 @@ class IBApp(IBWrapper, IBClient):
 if __name__ == "__main__":
     load_dotenv()
     app = IBApp(os.getenv("LOCALHOST"), 7497, client_id=10)
-    aapl = stock("TUYA", "SMART", "USD")
+    tuya = stock("TUYA", "SMART", "USD")
     limit_order = limit(BUY, 100, 3.89)
+    data = app.get_historical_data(
+        request_id=99,
+        contract=tuya,
+        duration='2 D',
+        bar_size='30 secs'
+    )
+    print(data)
     time.sleep(30)
     app.disconnect()
